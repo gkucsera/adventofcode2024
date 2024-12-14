@@ -22,7 +22,7 @@ for (var i = 0; i < input.Length; i += 4)
 var totalCost = 0L;
 foreach (var machine in machines)
 {
-    var cost = GetLowestCostWithOffset2(machine, 0);
+    var cost = GetLowestCostWithOffset(machine, 0);
     totalCost += cost;
 }
 
@@ -30,7 +30,7 @@ Console.WriteLine($"Part 1: {totalCost}");
 totalCost = 0;
 foreach (var machine in machines)
 {
-    var cost = GetLowestCostWithOffset2(machine, 10000000000000);
+    var cost = GetLowestCostWithOffset(machine, 10000000000000);
     {
         totalCost += cost;
     }
@@ -40,7 +40,7 @@ Console.WriteLine($"Part 2: {totalCost}");
 
 return;
 
-long GetLowestCostWithOffset2(Machine machine, long offset)
+long GetLowestCostWithOffset(Machine machine, long offset)
 {
     var totalX = machine.TotalX + offset;
     var totalY = machine.TotalY + offset;
